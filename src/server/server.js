@@ -13,7 +13,6 @@ import serverRoutes from '../frontend/routes/serverRoutes';
 import reducer from '../frontend/redux/reducers/index';
 import initialState from '../frontend/initialState';
 import getManifest from './getManifest';
-import { SET_PRODUCT_DETAILS } from '../frontend/redux/actions/actions-type';
 
 dotenv.config();
 
