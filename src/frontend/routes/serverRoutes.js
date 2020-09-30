@@ -1,5 +1,7 @@
 import Home from '../views/Home';
 import NotFound from '../views/NotFound';
+import ProductDetails from '../views/ProductDetails';
+import ProductsList from '../views/ProductsList';
 
 const routes = [
   {
@@ -8,12 +10,12 @@ const routes = [
     component: Home,
   },
   {
-    name: '/items',
-    component: NotFound,
+    path: '/items/:id',
+    component: ProductDetails,
   },
   {
-    name: '/items/:id',
-    component: NotFound,
+    path: '/items',
+    component: ProductsList,
   },
   {
     name: 'NotFound',
