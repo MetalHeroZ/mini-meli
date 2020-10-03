@@ -53,7 +53,7 @@ const setResponse = (html, preloadedState, manifest) => {
 
   return (`
   <!DOCTYPE html>
-  <html>
+  <html lang="es">
     <head>
       <link rel="stylesheet" href="/${mainStyles}" type="text/css">
       <title>Mini Meli</title>

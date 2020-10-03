@@ -1,8 +1,12 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { getItems } from '../redux/selectors';
 
 const List = () => {
+  const items = useSelector(getItems);
+
   return (
-    <div />
+    <div>{`Total: ${items.length}`}</div>
   );
 };
 

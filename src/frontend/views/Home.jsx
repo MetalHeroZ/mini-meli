@@ -1,17 +1,15 @@
 import React from 'react';
 import '../assets/styles/App.scss';
 import { Container } from '../common';
-import Search from '../components/SearchBar';
+import Header from '../components/Header';
 
-const Home = () => {
+export default function Home() {
   return (
     <>
-      <Search />
+      <Header />
       <Container>
         Aca estaria la grandios HOME
       </Container>
     </>
   );
-};
-
-export default Home;
+}
