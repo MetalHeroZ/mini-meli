@@ -1,6 +1,6 @@
 import { SET_PRODUCTS_LIST, SET_PRODUCT_DETAILS } from '../actions/actions-type';
 
-const setProductsList = (state, action) => {
+const setSearchResults = (state, action) => {
   const { categories = [], items = [], query = '' } = action.payload;
   return {
     ...state,
@@ -13,7 +13,7 @@ const setProductsList = (state, action) => {
   };
 };
 
-const setDetails = (state, action) => {
+const setItemDetails = (state, action) => {
   return {
     ...state,
     productDetails: action.payload,
@@ -23,9 +23,9 @@ const setDetails = (state, action) => {
 const reducer = (state, action) => {
   switch (action.type) {
     case SET_PRODUCTS_LIST:
-      return setProductsList(state, action);
+      return setSearchResults(state, action);
     case SET_PRODUCT_DETAILS:
-      return setDetails(state, action);
+      return setItemDetails(state, action);
     default:
       return state;
   }

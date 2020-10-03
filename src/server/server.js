@@ -41,6 +41,7 @@ if (ENV === 'development') {
   app.use(helmet.permittedCrossDomainPolicies());
   app.disable('x-powered-by');
 }
+
 app.use((req, res, next) => {
   req.store = createStore(reducer, initialState, applyMiddleware(thunk));
   next();

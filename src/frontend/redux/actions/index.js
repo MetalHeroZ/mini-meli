@@ -5,7 +5,7 @@ export const setItemsList = payload => ({
   type: SET_PRODUCTS_LIST,
   payload,
 });
-export const setItemInformation = payload => ({
+export const setItemDetails = payload => ({
   type: SET_PRODUCT_DETAILS,
   payload,
 });
@@ -28,7 +28,7 @@ export function getDetailsById(id) {
   return async (dispatch) => {
     try {
       const res = await getItemInformation(id);
-      dispatch(setItemInformation(res.data));
+      dispatch(setItemDetails(res.data));
     } catch (error) {
       console.log(error);
     }
