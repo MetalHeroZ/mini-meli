@@ -1,9 +1,12 @@
 const initialState = {
   'productsList': {
-    query: '',
+    categories: [],
     items: [],
+    query: '',
   },
-  'productDetails': null,
+  'productDetails': {
+    item: null,
+  },
 };
 
 export default initialState;

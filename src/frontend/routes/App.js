@@ -1,17 +1,18 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import routes from './serverRoutes';
-import Layout from '../common/Layout';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../views/Home';
+import NotFound from '../views/NotFound';
+import ProductDetails from '../views/ProductDetails';
+import ProductsList from '../views/ProductsList';
 
 const App = () => (
   <BrowserRouter>
-    <Layout>
-      <Switch>
-        {routes.map(route => (
-          <Route key={`${route.path}-path`} {...route} />
-        ))}
-      </Switch>
-    </Layout>
+    <Switch>
+      <Route exact path='/' component={Home} />
+      <Route exact path='/items' component={ProductsList} />
+      <Route path='/items/:id' component={ProductDetails} />
+      <Route component={NotFound} />
+    </Switch>
   </BrowserRouter>
 );
 

@@ -1,11 +1,36 @@
+import { searchItemsByQuery, getItemInformation } from '../../../api/mini-api';
 import { SET_PRODUCT_DETAILS, SET_PRODUCTS_LIST } from './actions-type';
 
-export const setProductsList = payload => ({
+export const setItemsList = payload => ({
+  type: SET_PRODUCTS_LIST,
+  payload,
+});
+export const setItemInformation = payload => ({
   type: SET_PRODUCT_DETAILS,
   payload,
 });
 
-export const setProductDetails = payload => ({
-  type: SET_PRODUCTS_LIST,
-  payload,
-});
+export function searchByQuery(query) {
+  return async (dispatch) => {
+    try {
+      const res = await searchItemsByQuery(query);
+      dispatch(setItemsList({
+        ...res.data,
+        query,
+      }));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export function getDetailsById(id) {
+  return async (dispatch) => {
+    try {
+      const res = await getItemInformation(id);
+      dispatch(setItemInformation(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
