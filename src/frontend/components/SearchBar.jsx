@@ -17,7 +17,9 @@ const SearchBar = () => {
 
   return (
     <>
-      <div className='logo-main'> MELI </div>
+      <div className='logo-main'>
+        <a href='/'>MELI</a>
+      </div>
       <form onSubmit={handleSubmit}>
         <input
           type='text'

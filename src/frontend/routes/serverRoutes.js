@@ -1,7 +1,7 @@
 import Home from '../views/Home';
 import NotFound from '../views/NotFound';
-import ProductDetails from '../views/ProductDetails';
-import ProductsList from '../views/ProductsList';
+import ItemDetails from '../views/ItemDetails';
+import SearchResults from '../views/SearchResults';
 
 const routes = [
   {
@@ -11,11 +11,11 @@ const routes = [
   },
   {
     path: '/items/:id',
-    component: ProductDetails,
+    component: ItemDetails,
   },
   {
     path: '/items',
-    component: ProductsList,
+    component: SearchResults,
   },
   {
     name: 'NotFound',
