@@ -1,0 +1,21 @@
+@import '../Vars.scss';
+
+.bredcrumb {
+	margin-bottom: 16px;
+	color: $gray-medium;
+}
+
+.breadcrumb__ol {
+	list-style: none;
+  display: flex;
+	align-items: center;
+	padding: 0;
+}
+
+.breadcrumb__li-item {
+	font-size: 14px;
+}
+
+.breadcrumb__separator {
+	transform: scale(var(--ggs,.8))!important;
+}
