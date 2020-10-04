@@ -1,3 +1,8 @@
-@media only screen and (max-width: 700) {
-  
+@media (max-width: 750px) {
+  .item-wrapper__data {
+		flex-direction: column!important;
+	}
+	.item {
+		width: 100%!important;
+	}
 }
