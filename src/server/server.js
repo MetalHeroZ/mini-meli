@@ -58,6 +58,8 @@ const setResponse = (html, preloadedState, manifest) => {
     <head>
       <link rel="stylesheet" href="/${mainStyles}" type="text/css">
       <title>Mini Meli</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Nunca pares de buscar!">
     </head>
     <body>
       <div id="app">${html}</div>

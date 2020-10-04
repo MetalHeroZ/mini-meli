@@ -6,13 +6,13 @@ export default function Item({ itemData }) {
   const urlDetails = `/items/${id}`;
 
   return (
-    <a href={urlDetails}>
+    <div className='item-container'>
       <div className='item'>
-        {title}
+        <a href={urlDetails}>{title}</a>
         <div>
           {price.amount}
         </div>
       </div>
-    </a>
+    </div>
   );
 }
