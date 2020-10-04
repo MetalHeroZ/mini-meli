@@ -9,9 +9,10 @@ export function Container({ children }) {
   );
 }
 
-export function Panel({ children }) {
+export function Panel({ children, withSpace = false }) {
+  const styles = `panel ${withSpace && 'panel--with-space '}`;
   return (
-    <div className='panel'>
+    <div className={styles}>
       { children }
     </div>
   );

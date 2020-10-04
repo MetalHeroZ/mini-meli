@@ -1,0 +1,46 @@
+@import '../Vars.scss';
+
+.item-details-main {
+	display: flex;
+	margin-bottom: 32px;
+}
+.item-details-main__picture {
+	width: 680px;
+	height: 680px;
+}
+
+.item-details-main__picture-img {
+	width: 680px;
+	height: 680px;
+	object-fit: contain;
+}
+
+.item-details-main__main-info {
+	padding-left: 32px ;
+}
+
+.main-info__subtitle {
+	color: $gray-medium;
+	font-size: 14px;
+}
+
+.main-info__title {
+	color: $gray-strong;
+	font-size: 24px;
+	margin-bottom: 32px;
+	font-weight: 600;
+}
+.main-info__price{
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	margin-bottom: 32px;
+}
+.main-info__price__amount {
+	font-size: 46px;
+}
+
+.main-info__price__decimals {
+	font-size: 23px;
+	line-height: 46px;
+}

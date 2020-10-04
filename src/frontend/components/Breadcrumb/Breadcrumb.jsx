@@ -8,15 +8,17 @@ export default function Breadcrumb({ levels = [] }) {
     const notLast = index < levels.length - 1;
     if (notLast) {
       acc.push(
-        <BreadcrumbItem key={act} value={act} />,
-        <ChevronRight className='breadcrumb__separator' />,
+        <BreadcrumbItem key={act}>{act}</BreadcrumbItem>,
+        <BreadcrumbItem key={`separator-${act}`}>
+          <ChevronRight className='breadcrumb__separator' />
+        </BreadcrumbItem>,
       );
     } else {
-      acc.push(<BreadcrumbItem key={act} value={act} />);
+      acc.push(<BreadcrumbItem key={act}>{act}</BreadcrumbItem>);
     }
     return acc;
   }, []);
-
+  console.log(breadcrumbItems);
   return (
     <div className='bredcrumb'>
       <ol className='breadcrumb__ol'>

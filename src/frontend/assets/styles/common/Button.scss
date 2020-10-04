@@ -1,0 +1,21 @@
+@import '../Vars.scss';
+
+.common-button {
+	cursor: pointer;
+	border: none;
+	background: $blue-default;
+	padding: 0 25px;
+	height: 30px;
+	color: #fff;
+	border-radius: 4px;
+}
+
+.common-button--fullWith {
+	display: block;
+	width: 100%;
+}
+
+.common-button--big {
+	font-size: 18px;
+	height: 50px;
+}

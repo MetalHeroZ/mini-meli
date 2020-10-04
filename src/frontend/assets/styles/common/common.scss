@@ -1,9 +1,14 @@
 .container {
-	max-width: 1540px;
+	max-width: 1184px;
 	margin: auto;
 	padding: 0 20px;
 }
 
 .panel {
 	background: #fff;
+	border-radius: 4px;
+}
+
+.panel--with-space {
+	padding: 32px;
 }

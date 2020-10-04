@@ -2,7 +2,20 @@
   .item-wrapper__data {
 		flex-direction: column!important;
 	}
+
 	.item {
 		width: 100%!important;
+	}
+	.item-details-main {
+		display: block!important;
+	}
+	.item-details-main__main-info {
+		padding-left: 0!important;
+	}
+
+	.item-details-main__picture,
+	.item-details-main__picture-img {
+		width: 100%!important;
+		height: 340px!important;
 	}
 }
