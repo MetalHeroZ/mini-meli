@@ -1,10 +1,10 @@
 const initialState = {
-  'productsList': {
+  searchResults: {
     categories: [],
     items: [],
     query: '',
   },
-  'productDetails': {
+  itemDetails: {
     item: null,
   },
 };

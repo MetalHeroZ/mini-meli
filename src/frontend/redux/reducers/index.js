@@ -4,8 +4,8 @@ const setSearchResults = (state, action) => {
   const { categories = [], items = [], query = '' } = action.payload;
   return {
     ...state,
-    productsList: {
-      ...state.productsList,
+    searchResults: {
+      ...state.searchResults,
       categories,
       items,
       query,
@@ -16,7 +16,7 @@ const setSearchResults = (state, action) => {
 const setItemDetails = (state, action) => {
   return {
     ...state,
-    productDetails: action.payload,
+    itemDetails: action.payload,
   };
 };
 
