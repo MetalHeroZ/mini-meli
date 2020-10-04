@@ -39,7 +39,7 @@ export default function Item({ itemData }) {
               />
             )}
           </div>
-          <div className='item__title'>
+          <div className='item__title item__title--clamp-2'>
             <a
               href={urlDetails}
               className='title__link title__link--decoration-off'
