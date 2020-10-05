@@ -7,10 +7,12 @@ import Item from '../components/Item';
 import { getCategoriesFronSearchResults, getItems } from '../redux/selectors';
 
 export default function ProductsList() {
+  const { ITEM_RESULTS_QUANTITY = 4 } = process.env;
   const itemsResult = useSelector(getItems);
   const categories = useSelector(getCategoriesFronSearchResults);
 
-  const items = itemsResult.map(item => (
+  const slicedItems = itemsResult.slice(0, ITEM_RESULTS_QUANTITY);
+  const items = slicedItems.map(item => (
     <Item key={item.id} itemData={item} />
   ));
 

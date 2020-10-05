@@ -18,7 +18,7 @@ export default function Breadcrumb({ levels = [] }) {
     }
     return acc;
   }, []);
-  console.log(breadcrumbItems);
+
   return (
     <div className='bredcrumb'>
       <ol className='breadcrumb__ol'>

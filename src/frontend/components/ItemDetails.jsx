@@ -8,15 +8,19 @@ import '../assets/styles/components/ItemDetails.scss';
 
 export default function ItemDetails() {
   const details = useSelector(getItemDetails);
-  const { title, picture, price, condition, description, sold_quantity: selled } = details;
+  const { title, picture, price, condition, description, sold_quantity: selledQuantity } = details;
+
   const amountString = numberHumanized(price.amount);
   const decimalsString = decimalHumanized(price.decimals);
-  const selledLabel = `| ${selled} vendido${selled > 1 ? 's' : ''}`;
-  const subtitle = `${condition ? 'Nuevo' : 'Usado'} ${selledLabel}`;
+
+  const sold = selledQuantity > 0;
+  const selledLabel = `| ${selledQuantity} vendido${selledQuantity > 1 ? 's' : ''}`;
+  const subtitle = `${condition ? 'Nuevo' : 'Usado'} ${sold ? selledLabel : ''}`;
 
   const handleOnClickBuy = () => {
     alert(':D');
   };
+
   return (
     <div className='item-details'>
       <div className='item-details-main'>
@@ -33,7 +37,7 @@ export default function ItemDetails() {
           <Button
             handleClick={handleOnClickBuy}
             label='Comprar'
-            fullWith
+            fullWidth
             big
           />
         </div>
