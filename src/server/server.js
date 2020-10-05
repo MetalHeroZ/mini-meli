@@ -10,6 +10,7 @@ import { applyMiddleware, createStore } from 'redux';
 import { renderRoutes } from 'react-router-config';
 import { StaticRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
+import { Helmet } from 'react-helmet';
 import serverRoutes from '../frontend/routes/serverRoutes';
 import reducer from '../frontend/redux/reducers/index';
 import initialState from '../frontend/initialState';
@@ -47,7 +48,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const setResponse = (html, preloadedState, manifest) => {
+const setResponse = (html, preloadedState, manifest, helmet) => {
   const mainStyles = manifest ? manifest['main.css'] : '/assets/app.css';
   const mainBuild = manifest ? manifest['main.js'] : '/assets/app.js';
   const vendorBuild = manifest ? manifest['vendors.js'] : '/assets/vendor.js';
@@ -57,9 +58,9 @@ const setResponse = (html, preloadedState, manifest) => {
   <html lang="es">
     <head>
       <link rel="stylesheet" href="${mainStyles}" type="text/css">
-      <title>Mini Meli</title>
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="Nunca pares de buscar!">
     </head>
     <body>
       <div id="app">${html}</div>
@@ -82,8 +83,9 @@ const renderApp = (req, res) => {
       </StaticRouter>
     </Provider>,
   );
+  const helmet = Helmet.renderStatic();
 
-  res.send(setResponse(html, preloadedState, req.hashManifest));
+  res.send(setResponse(html, preloadedState, req.hashManifest, helmet));
 };
 
 app.get('/items/:id', (req, res) => {
