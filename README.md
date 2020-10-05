@@ -21,7 +21,7 @@ npm run start
 
 ### Como funciona?
 Primero preparo la aplicacion para el pre-renderizado en la siguiente funcion:
-```
+```js
 // src/server/server.js
 const renderApp = (req, res) => {
   const preloadedState = req.store.getState();
@@ -48,7 +48,7 @@ Y por ultimo obtengo todos loas elementos de React Helment:
 const helmet = Helmet.renderStatic();
 ```
 Ya con todos los datos generados paso a generar el html resultante:
-```
+```js
 const setResponse = (html, preloadedState, manifest, helmet) => {
   const mainStyles = manifest ? manifest['main.css'] : '/assets/app.css';
   const mainBuild = manifest ? manifest['main.js'] : '/assets/app.js';
@@ -77,7 +77,7 @@ const setResponse = (html, preloadedState, manifest, helmet) => {
 ```
 ### Como manejo los request ?
 Por un lado, para todas las rutas voy a necesitar inicializar una store de redux, entonces lo que hice fue aplicar un middleware de express de esta forma:
-```
+```js
 // src/server/server.js
 app.use((req, res, next) => {
   req.store = createStore(reducer, initialState, applyMiddleware(thunk));
@@ -86,7 +86,7 @@ app.use((req, res, next) => {
 ```
 
 Las rutas que necesitan pre-cargar información de una api externa tiene acceso a `req.store` para realizar un dispatch previo al renderizado de la aplicacion.
-```
+```js
 // src/server/server.js
 app.get('/items/:id', (req, res) => {
   const { id } = req.params;
