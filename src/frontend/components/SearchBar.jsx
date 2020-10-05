@@ -17,7 +17,7 @@ const SearchBar = () => {
     e.preventDefault();
     const cleanQuery = queryInputRef.current.value.toLowerCase().trim();
     if (cleanQuery) {
-      window.location.href = `/items?query=${cleanQuery}`;
+      window.location.href = `/items?search=${cleanQuery}`;
     }
   };
 

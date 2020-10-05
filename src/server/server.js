@@ -96,8 +96,8 @@ app.get('/items/:id', (req, res) => {
 });
 
 app.get('/items', (req, res) => {
-  const { query } = req.query;
-  const requirements = [req.store.dispatch(searchByQuery(query))];
+  const { search } = req.query;
+  const requirements = [req.store.dispatch(searchByQuery(search))];
 
   Promise.all(requirements).then(() => {
     renderApp(req, res);
