@@ -10,7 +10,7 @@ Las principales tecnologías que use son:
 - Webpack
 - Express
 
-Podes en 3 simples pasos:
+Podés correrlo en 3 simples pasos:
 ```
 npm i
 npm run build
