@@ -10,6 +10,13 @@ Las principales tecnologías que use son:
 - Webpack
 - Express
 
+Principales caracteristicas:
+- Responsive
+- SEO Friendly
+- Codigo minificado
+- Server Side Render
+- Metodologia BEM para el css 
+
 Podés correrlo en 3 simples pasos:
 ```
 npm i
